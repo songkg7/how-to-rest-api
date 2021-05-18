@@ -59,7 +59,7 @@ public class ApiController {
         return sb.toString();
     }
 
-    // 명시적 지정 방법
+    // Query Parameter - 명시적 지정 방법
     @GetMapping("query-param02")
     public String queryParam02(@RequestParam String name,
                                @RequestParam String email,
@@ -70,7 +70,7 @@ public class ApiController {
         return name + " " + email + " " + age;
     }
 
-    // DTO 활용 방법
+    // Query Parameter - DTO 활용 방법
     // @RequestParam 은 붙이지 않는다.
     // Best Practice!
     @GetMapping("query-param03")
