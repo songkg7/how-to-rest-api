@@ -3,6 +3,8 @@ package com.haril.restapi.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @Slf4j
 @RestController
 @RequestMapping("/api")
@@ -44,7 +46,28 @@ public class ApiController {
 
     // Query Parameter
     // ex) http://localhost:8080/api/query-param?user=steve&email=steve@gmail.com&age=30
+    @GetMapping("query-param01")
+    public String queryParam01(@RequestParam Map<String, String> queryParam) {
+        StringBuilder sb = new StringBuilder();
+        queryParam.forEach((key, value) -> {
+            log.info("key : " + key);
+            log.info("value : " + value);
+            sb.append(key).append(" = ").append(value).append("\n");
+        });
 
+        return sb.toString();
+    }
+
+    // 명시적 지정 방법
+    @GetMapping("query-param02")
+    public String queryParam02(@RequestParam String name,
+                               @RequestParam String email,
+                               @RequestParam int age) {
+        System.out.println("name = " + name);
+        System.out.println("email = " + email);
+        System.out.println("age = " + age);
+        return name + " " + email + " " + age;
+    }
 
 
 
