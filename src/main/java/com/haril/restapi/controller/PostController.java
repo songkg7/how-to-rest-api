@@ -1,6 +1,6 @@
 package com.haril.restapi.controller;
 
-import com.haril.restapi.dto.PostRequest;
+import com.haril.restapi.dto.PostRequestDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,7 +38,7 @@ public class PostController {
     // POST 요청을 보내는 다양한 방법 3 - 주고받는 JSON data 가 스네이크케이스와 카멜케이스로 서로 달라서 매칭이 안되는 경우 해결 방법
     // @JsonProperty 활용
     @PostMapping("/post02")
-    public void post02(@RequestBody PostRequest requestData) {
+    public void post02(@RequestBody PostRequestDto requestData) {
         System.out.println(requestData);
     }
 

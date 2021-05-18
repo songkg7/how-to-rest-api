@@ -9,7 +9,7 @@ import lombok.Data;
  * @since 2021/05/18 10:26 오후
  */
 @Data
-public class PostRequest {
+public class PostRequestDto {
     private String account;
     private String password;
     private String email;

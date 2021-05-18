@@ -14,7 +14,7 @@ import java.util.List;
 
 @Data
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class PutRequest {
+public class PutRequestDto {
 
     private String name;
     private int age;

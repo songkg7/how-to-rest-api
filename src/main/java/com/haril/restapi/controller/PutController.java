@@ -1,6 +1,6 @@
 package com.haril.restapi.controller;
 
-import com.haril.restapi.dto.PutRequest;
+import com.haril.restapi.dto.PutRequestDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +22,16 @@ public class PutController {
     // PUT 은 POST 와 거의 같다.
     // @JsonNaming 의 활용
     @PutMapping("/put01")
-    public void put01(@RequestBody PutRequest putRequest) {
-        System.out.println(putRequest);
+    public void put01(@RequestBody PutRequestDto putRequestDto) {
+        System.out.println(putRequestDto);
+    }
+
+    // PUT 요청을 처리하는 방법 2 - return Object
+    // Json 으로 변환되어 echo 처럼 동작하게 된다.
+    @PutMapping("/put02")
+    public PutRequestDto put02(@RequestBody PutRequestDto putRequestDto) {
+        System.out.println("putRequestDto = " + putRequestDto);
+        return putRequestDto;
     }
 
 }
