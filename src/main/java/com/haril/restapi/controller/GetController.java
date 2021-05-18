@@ -9,7 +9,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/api")
-public class ApiController {
+public class GetController {
 
     /**
      * NOTE: Get 요청을 보내는 다양한 방법
@@ -24,7 +24,7 @@ public class ApiController {
         return "get Hello";
     }
 
-    // Best
+    // Best Practice!
     @GetMapping("/hello")
     public String hello() {
         return "hello";
