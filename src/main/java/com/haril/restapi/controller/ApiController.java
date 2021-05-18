@@ -1,5 +1,6 @@
 package com.haril.restapi.controller;
 
+import com.haril.restapi.dto.UserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -69,6 +70,15 @@ public class ApiController {
         return name + " " + email + " " + age;
     }
 
-
+    // DTO 활용 방법
+    // @RequestParam 은 붙이지 않는다.
+    // Best Practice!
+    @GetMapping("query-param03")
+    public String queryParam03(UserRequest userRequest) {
+        System.out.println("userRequest.getName() = " + userRequest.getName());
+        System.out.println("userRequest.getEmail() = " + userRequest.getEmail());
+        System.out.println("userRequest.getAge() = " + userRequest.getAge());
+        return userRequest.toString();
+    }
 
 }
