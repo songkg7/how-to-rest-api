@@ -2,10 +2,7 @@ package com.haril.restapi.controller;
 
 import com.haril.restapi.dto.PutRequestDto;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author songkg7
@@ -31,6 +28,13 @@ public class PutController {
     @PutMapping("/put02")
     public PutRequestDto put02(@RequestBody PutRequestDto putRequestDto) {
         System.out.println("putRequestDto = " + putRequestDto);
+        return putRequestDto;
+    }
+
+    // PathVariable
+    @PutMapping("/put03/{userId}")
+    public PutRequestDto put03(@RequestBody PutRequestDto putRequestDto, @PathVariable Long userId) {
+        System.out.println("userId = " + userId);
         return putRequestDto;
     }
 
