@@ -15,8 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -58,10 +57,7 @@ class PutControllerTest {
         CarDto car2 = new CarDto("Audi", "121저 1847");
         CarDto car3 = new CarDto("Volkswagen", "271오 5380");
 
-        List<CarDto> carList = new ArrayList<>();
-        carList.add(car1);
-        carList.add(car2);
-        carList.add(car3);
+        List<CarDto> carList = Arrays.asList(car1, car2, car3);
 
         PutRequestDto dto = new PutRequestDto();
         dto.setName("steve");
