@@ -1,5 +1,6 @@
 package com.haril.restapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.Data;
  */
 @Data
 @JsonNaming(value = PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonInclude(JsonInclude.Include.NON_NULL) // null 값은 내려주지 않는다.
 public class User {
     private String name;
     private int age;

@@ -27,6 +27,8 @@ public class ApiController {
         return user;
     }
 
+    // ResponseEntity
+    // @JsonInclude : null 값은 제외하고 response 를 만드는 등, 다양한 처리가 가능하다.
     @PutMapping("/put")
     public ResponseEntity<User> put(@RequestBody User user) {
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
