@@ -74,11 +74,11 @@ public class GetController {
     // @RequestParam 은 붙이지 않는다.
     // Best Practice!
     @GetMapping("query-param03")
-    public String queryParam03(UserRequestDto userRequestDto) {
+    public UserRequestDto queryParam03(UserRequestDto userRequestDto) {
         System.out.println("userRequest.getName() = " + userRequestDto.getName());
         System.out.println("userRequest.getEmail() = " + userRequestDto.getEmail());
         System.out.println("userRequest.getAge() = " + userRequestDto.getAge());
-        return userRequestDto.toString();
+        return userRequestDto;
     }
 
 }
