@@ -18,6 +18,7 @@ public class PutRequestDto {
 
     private String name;
     private int age;
+    private String phoneNumber;
     private List<CarDto> carList;
 
 }
