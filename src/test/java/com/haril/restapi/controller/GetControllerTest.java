@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(GetController.class)
 class GetControllerTest {
 
-    private final String URL = "http://localhost:8080/api/";
+    private final String URL = "http://localhost:8080/api";
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -97,7 +97,7 @@ class GetControllerTest {
     @DisplayName("6. Query Parameter 02 - 명시적 지정")
     @Test
     void test_6() throws Exception {
-        mockMvc.perform(get(URL + "query-param02")
+        mockMvc.perform(get(URL + "/query-param02")
                 .queryParam("name", "steve")
                 .queryParam("email", "steve@gmail.com")
                 .queryParam("age", "30"))
@@ -115,7 +115,7 @@ class GetControllerTest {
         params.add("email", "steve@gmail.com");
         params.add("age", "30");
 
-        MvcResult result = mockMvc.perform(get(URL + "query-param03")
+        MvcResult result = mockMvc.perform(get(URL + "/query-param03")
                 .queryParams(params))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
